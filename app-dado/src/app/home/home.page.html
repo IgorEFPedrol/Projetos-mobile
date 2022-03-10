@@ -1,14 +1,14 @@
 <ion-content>
-  <div class="bg-danger h-100 d-flex justify-content-center align-items-center">
-    <div class="bg-warning display-1 fw-bold">
-      0
+  <div class="h-100 d-flex justify-content-center align-items-center">
+    <div class="display-1 fw-bold" [class.text-danger]="sorteando" [class.scale-up-center]="!sorteando">
+      {{dado}}
     </div>
   </div>
 
 
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button>
+      <ion-fab-button (click)="sortear()">
           <ion-icon name="dice-outline"></ion-icon>
       </ion-fab-button>
   </ion-fab>
