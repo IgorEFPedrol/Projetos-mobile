@@ -18,13 +18,13 @@
       Hotdog
     </div>
     <div class="col-2">
-      <button class="btn btn-danger">-</button>
+      <button class="btn btn-danger" (click)="delHotdog()">-</button>
     </div>
     <div class="col-3 d-flex align-items-center">
-      <input type="number" class="w-100" id="qtdHotdog">
+      <input type="number" class="w-100" [(ngModel)]="qtdHotdog">
     </div>
     <div class="col-2">
-      <button class="btn btn-success">+</button>
+      <button class="btn btn-success" (click)="addHotdog()">+</button>
     </div>
   </div>
 
@@ -33,13 +33,13 @@
       Refri
     </div>
     <div class="col-2">
-      <button class="btn btn-danger">-</button>
+      <button class="btn btn-danger" (click)="delRefri()">-</button>
     </div>
     <div class="col-3 d-flex align-items-center">
-      <input type="number" class="w-100" id="qtdRefri">
+      <input type="number" class="w-100" [(ngModel)]="qtdRefri">
     </div>
     <div class="col-2">
-      <button class="btn btn-success">+</button>
+      <button class="btn btn-success" (click)="addRefri()">+</button>
     </div>
   </div>
 
@@ -48,13 +48,13 @@
       Bala
     </div>
     <div class="col-2">
-      <button class="btn btn-danger">-</button>
+      <button class="btn btn-danger" (click)="delBala()">-</button>
     </div>
     <div class="col-3 d-flex align-items-center">
-      <input type="number" class="w-100" id="qtdBala">
+      <input type="number" class="w-100" [(ngModel)]="qtdBala">
     </div>
     <div class="col-2">
-      <button class="btn btn-success">+</button>
+      <button class="btn btn-success" (click)="addBala()">+</button>
     </div>
   </div>
 
@@ -63,13 +63,13 @@
       Chocolate
     </div>
     <div class="col-2">
-      <button class="btn btn-danger">-</button>
+      <button class="btn btn-danger" (click)="delChocolate()">-</button>
     </div>
     <div class="col-3 d-flex align-items-center">
-      <input type="number" class="w-100" id="qtdChocolate">
+      <input type="number" class="w-100" [(ngModel)]="qtdChocolate">
     </div>
     <div class="col-2">
-      <button class="btn btn-success">+</button>
+      <button class="btn btn-success" (click)="addChocolate()">+</button>
     </div>
   </div>
 
