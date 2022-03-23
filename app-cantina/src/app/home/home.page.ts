@@ -22,6 +22,7 @@ export class HomePage {
     this.resultado += this.qtdRefri * 3.5;
     this.resultado += this.qtdBala * 0.25;
     this.resultado += this.qtdChocolate * 2;
+    this.troco = 0;
     if (this.resultado < this.pagamento)
     this.calcularTroco();
   }
@@ -72,8 +73,7 @@ export class HomePage {
   }
 
   calcularTroco() {
-      this.pagamento -= this.resultado;
-      this.troco = this.pagamento;
+      this.troco = this.pagamento - this.resultado;
   }
 
   limpar() {
