@@ -74,11 +74,11 @@
   </div>
 
   <div class="text-center display-4 fw-bold mt-5 align-items-center">
-    Total R$ {{resultado}}
+    Total {{resultado | currency: 'BRL'}}
   </div>
 
     <div class="text-center display-3 fw-bold mt-3 text-">
        <input type="number" class="w-50" [(ngModel)]="pagamento" (keyup)="calcularTotal()">
     </div>
-  <div class="text-center display-4 fw-bold mt-5">Troco R$ {{this.troco}}</div>
+  <div class="text-center display-4 fw-bold mt-5">Troco {{this.troco | currency : 'BRL'}}</div>
 </div>

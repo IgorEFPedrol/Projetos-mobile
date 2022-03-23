@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
 import { NumericValueAccessor } from '@ionic/angular';
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ptBr);
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
+  providers:    [
+    // ************************************
+    { provide: LOCALE_ID, useValue: 'pt' },
+    // ************************************
+  ],
 })
 export class HomePage {
   qtdHotdog: number = 0;
