@@ -12,6 +12,8 @@ export class HomePage {
   qtdBala: number = 0;
   qtdChocolate: number = 0;
   resultado: number = 0;
+  pagamento: number = 0;
+  troco: number = 0;
 
   constructor() {}
 
@@ -19,7 +21,9 @@ export class HomePage {
     this.resultado = this.qtdHotdog * 5;
     this.resultado += this.qtdRefri * 3.5;
     this.resultado += this.qtdBala * 0.25;
-    this.resultado += this.qtdChocolate * 2; 
+    this.resultado += this.qtdChocolate * 2;
+    if (this.resultado < this.pagamento)
+    this.calcularTroco();
   }
 
   addHotdog() {
@@ -67,11 +71,18 @@ export class HomePage {
     }
   }
 
+  calcularTroco() {
+      this.pagamento -= this.resultado;
+      this.troco = this.pagamento;
+  }
+
   limpar() {
     this.qtdHotdog = 0;
     this.qtdRefri = 0;
     this.qtdBala = 0;
     this.qtdChocolate = 0;
     this.resultado = 0;
+    this.pagamento = 0;
+    this.troco = 0;
   }
 }
