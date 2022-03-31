@@ -1,4 +1,4 @@
-<div class="d-flex flex-column text-center">
+<div class="d-flex flex-column text-center mx-4">
   <label for="cigarro" class="mt-3 mb-2">Quantidade de cigarros por dia:</label>
   <input type="number" placeholder="Ex: 2" id="cigarro" [(ngModel)]="quantidadeCigarro">
 
@@ -9,5 +9,5 @@
 
   <h4>Tempo de vida perdido</h4>
 
-  <h2>{{tempoVidaPerdido}} Dia(s)</h2>
+  <h2 class="text-danger">{{tempoVidaPerdido.toFixed(2)}} {{tipoTempoPerdido}}</h2>
 </div>
