@@ -1,0 +1,28 @@
+<div class="container">
+
+	<div class="col-4 d-grid mx-auto">
+		<form action="" class="form-group">
+			<label for="preco" class="mt-5">Preço da Gasolina</label>
+			<div class="input-group mt-2">
+				<span class="input-group-text" id="icone" name="preco">$</span>
+				<input type="text" class="form-control" placeholder="Ex: 6.5" aria-label="Ex: 6.5" aria-describedby="icone" name="precoGasolina" [(ngModel)]="precoGasolina" (keyup)="calcularGastoViagem()">
+			</div>
+
+			<label for="distancia" class="mt-4">Distância da Viagem</label>
+			<input type="text" class="form-control mt-2" name="distancia" placeholder="Ex: 200" [(ngModel)]="distancia" (keyup)="calcularGastoViagem()">
+			
+			<label for="consumo" class="mt-4">Consumo do Carro</label>
+			<input type="text" class="form-control mt-2" name="consumo" placeholder="Ex: 10" [(ngModel)]="consumo" (keyup)="calcularGastoViagem()">
+		</form>		
+	</div>
+	<div class="text-center mt-2">
+		<h2>Gasto Total: {{this.gastoViagem | currency : 'BRL'}}</h2>
+	</div>	
+	
+	
+	
+	
+	
+	
+	
+</div>
