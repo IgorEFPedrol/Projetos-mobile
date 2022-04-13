@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container bg-light mt-5 border">
   <div class="col-10 d-grid mx-auto">
     <div class="mt-4">
       <p class="text-start fs-1 fw-bold">Calcular consumo</p>
@@ -13,6 +13,7 @@
         <span class="input-group-text" id="icone1" name="preco">$</span>
         <input
           type="text"
+          [mask]="0*.00" 
           class="form-control"
           placeholder="Ex: 6.5"
           aria-label="Ex: 6.5"
@@ -38,7 +39,7 @@
 
       <label for="consumo" class="mt-4">Consumo do Carro</label>
       <div class="input-group mt-2">
-        <span class="input-group-text " id="icone2" name="consumo2">Km</span>
+        <span class="input-group-text " id="icone2" name="consumo2">Km/L</span>
       <input
         type="text"
         class="form-control"
@@ -55,7 +56,7 @@
     Sua viagem tera um gasto de:
   </div>
 
-  <div class=" mt-2 fs-1 fw-bold d-flex align-items-center justify-content-center">
+  <div class=" mt-2 mb-5 fs-1 fw-bold d-flex align-items-center justify-content-center">
     <div>{{this.gastoViagem | currency : 'BRL'}}</div>
     <div class="d-flex align-items-center justify-content-center ms-3 " >
       <svg

@@ -3,6 +3,9 @@ import { NumericValueAccessor } from '@ionic/angular';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+ 
+ 
 
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
