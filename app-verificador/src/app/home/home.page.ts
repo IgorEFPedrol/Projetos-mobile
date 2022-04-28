@@ -13,6 +13,7 @@ export class HomePage {
   constructor() {}
 
   verificarSenha() {
+    this.pontuacao = 0;
     if(this.senha.match(/[a-z]/))
       this.pontuacao++;    
 
