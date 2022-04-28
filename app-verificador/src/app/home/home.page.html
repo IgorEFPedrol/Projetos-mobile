@@ -1,0 +1,32 @@
+<div class="container mt-3">
+
+  <div class="row text-center mb-3">
+    <div class="col">
+      <h1>Verificador de Senha</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <form action="">
+        <div class="form-floating">
+          <input type="text" (keyup)="verificarSenha()" class="form-control" id="senha" placeholder="Abc123@!"
+            [(ngModel)]="senha" name="s">
+          <label for="senha">Insira sua Senha:</label>
+        </div>
+        <div class="row mt-5">
+          <p class="text-center fw-bold fs-3">Pontuação: {{pontuacao}}</p>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+</div>
