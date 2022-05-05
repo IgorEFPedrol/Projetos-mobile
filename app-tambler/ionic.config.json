@@ -1,0 +1,7 @@
+{
+  "name": "app-tambler",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
