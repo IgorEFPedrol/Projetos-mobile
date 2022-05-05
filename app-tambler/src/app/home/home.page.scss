@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+h1, h3 {
+    margin: 0;
+    font-family: 'Indie Flower', cursive;
+}
+
+.fundo {
+    background: url(http://picsum.photos/800/1600/?blur) 
+        center no-repeat,
+        linear-gradient(to bottom right, #59c173, #a17fe0, #5d26c1);
+    background-blend-mode: overlay;
+}
+
+.conteudo {
+    background-color: #ffffffbb;
+}
