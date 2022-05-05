@@ -15,7 +15,7 @@ interface Frase {
 })
 export class HomePage {
   url = 'http://lucasreno.kinghost.net/frase';
-  frase: Frase;
+  frase: Frase = {id: 0, frase: '', autor: ''};
 
   constructor(private http: HttpClient) {
     http.get<any>(this.url).subscribe(
