@@ -7,7 +7,7 @@
 
     </ion-input>
   </ion-item>
-  <ion-button [disabled]="!novaTarefa" expand="full" (click)="cadastrarTarefa()">
+  <ion-button color="success" [disabled]="!novaTarefa" expand="block" (click)="cadastrarTarefa()" >
     Adicionar
   </ion-button>
   <ion-list>
@@ -15,7 +15,6 @@
       <ion-item-sliding (ionSwipe)="removerTarefa(id)">
         <ion-item>{{ id }}  - {{ tarefa }}</ion-item>
         <ion-item-options side="end">
-
         </ion-item-options>
       </ion-item-sliding>
     </ion-item-group>

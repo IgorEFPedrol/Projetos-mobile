@@ -23,8 +23,9 @@ export class HomePage {
       buttons: [
         {
           text: 'Desfazer',
-          handler: () => {
-
+          handler: async () => {
+            this.tarefas = [...this.tarefasBackup];
+            await this.storage.set('tarefas', this.tarefas);
           },
         }
       ],
