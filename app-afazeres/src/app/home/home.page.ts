@@ -25,8 +25,8 @@ export class HomePage {
     }  
   }
 
-  removerTarefa() 
+  removerTarefa(posicao) 
   {
-    
+    this.tarefas.splice(posicao, 1);
   }
 }

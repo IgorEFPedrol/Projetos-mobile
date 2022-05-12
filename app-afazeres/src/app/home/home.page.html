@@ -12,7 +12,7 @@
   </ion-button>
   <ion-list>
     <ion-item-group *ngFor="let tarefa of tarefas; let id = index">
-      <ion-item-sliding (ionSwipe)="removerTarefa()">
+      <ion-item-sliding (ionSwipe)="removerTarefa(posicao)">
         <ion-item>{{ id }}  - {{ tarefa }}</ion-item>
         <ion-item-options side="end">
 
