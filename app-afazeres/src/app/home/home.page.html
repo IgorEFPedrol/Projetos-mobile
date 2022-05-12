@@ -1,20 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div>
+  <ion-item>
+    <ion-label position="floating">
+      Nova Tarefa:
+    </ion-label>
+    <ion-input [(ngModel)]="novaTarefa">
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    </ion-input>
+  </ion-item>
+  <ion-button [disabled]="!novaTarefa" expand="full" (click)="cadastrarTarefa()">
+    Adicionar
+  </ion-button>
+  <ion-list>
+    <ion-item-group *ngFor="let tarefa of tarefas; let id = index">
+      <ion-item-sliding (ionSwipe)="removerTarefa()">
+        <ion-item>{{ id }}  - {{ tarefa }}</ion-item>
+        <ion-item-options side="end">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</div>
