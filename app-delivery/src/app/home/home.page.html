@@ -4,5 +4,17 @@
             <img src="{{cat.foto}}" alt="">
             <h2>{{cat.nome}}</h2>
         </div>
+        <ion-list>
+            <ion-item *ngFor="let prod of cat.produtos" routerLink="/detalhe">
+                <ion-avatar slot="start"> 
+                    <img src="{{prod.foto || 'https://via.placeholder.com/150'}}" alt="">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{ prod.nome }}</h2>
+                    <p>{{ prod.descricao }}</p>
+                    <p>{{ prod.valor | currency : 'BRL'}}</p>                
+                </ion-label>  
+           </ion-item>
+        </ion-list>
     </div>
 </ion-content>
