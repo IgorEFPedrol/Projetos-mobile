@@ -9,14 +9,16 @@ import { Categoria } from '../interface/categoria';
 })
 export class HomePage {
   URL_BASE = 'http://lucasreno.kinghost.net/delivery';
+  dados: Categoria[] = [];
+
   constructor(private http: HttpClient) {
     this.pegarDados();
   }
 
   pegarDados() {
-    this.http.get<Categoria>(this.URL_BASE + '/categorias').subscribe(
+    this.http.get<Categoria[]>(this.URL_BASE + '/categorias').subscribe(
       resposta => {
-        console.log(resposta);
+        this.dados = resposta;
       }
     );
   }
