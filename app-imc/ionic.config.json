@@ -1,0 +1,7 @@
+{
+  "name": "app-imc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
