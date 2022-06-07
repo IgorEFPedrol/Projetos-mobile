@@ -9,12 +9,19 @@ import { ProdutoEscolhidoService } from '../service/produto-escolhido.service';
 })
 export class DetalhePage implements OnInit {
   produto: Produto;
-
+  quantidade: number = 1;
   constructor(private prodService: ProdutoEscolhidoService) {
-    this.produto = prodService.produto;
-    
+    this.produto = prodService.produto;   
   }
 
+  subQtd() {
+    if(this.quantidade > 1)
+      this.quantidade--;
+  }
+
+  addQtd() {
+    this.quantidade++;
+  }
   ngOnInit() {
   }
 
