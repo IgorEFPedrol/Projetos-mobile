@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Categoria } from '../interface/categoria';
 import { Produto } from '../interface/produto';
+import { ProdutoEscolhidoService } from '../service/produto-escolhido.service';
 
 @Component({
   selector: 'app-detalhe',
@@ -9,10 +8,10 @@ import { Produto } from '../interface/produto';
   styleUrls: ['./detalhe.page.scss'],
 })
 export class DetalhePage implements OnInit {
-  URL_BASE = 'http://lucasreno.kinghost.net/delivery';
-  dados: Categoria[] = [];
+  produto: Produto;
 
-  constructor(private http: HttpClient) {
+  constructor(private prodService: ProdutoEscolhidoService) {
+    this.produto = prodService.produto;
     
   }
 
