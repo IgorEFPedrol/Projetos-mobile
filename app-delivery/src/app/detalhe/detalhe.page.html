@@ -21,7 +21,7 @@
       <ion-button (click)="addQtd()">+</ion-button>
     </div>
     <div class="m-auto">
-      <ion-button (click)="addCarrinho()">Adicionar {{produto.valor * quantidade | currency: 'BRL'}}</ion-button>
+      <ion-button (click)="addCarrinho()" routerLink="/home">Adicionar {{produto.valor * quantidade | currency: 'BRL'}}</ion-button>
     </div>
   </footer>
 </ion-content>

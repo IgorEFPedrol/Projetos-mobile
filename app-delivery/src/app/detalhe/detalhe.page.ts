@@ -24,7 +24,7 @@ export class DetalhePage implements OnInit {
 
   async iniciarBanco() {
     await this.storage.create();
-    this.carrinho = await this.storage.get('carrinho');
+    this.carrinho = await this.storage.get('carrinho') ?? [];
 
   }
 
