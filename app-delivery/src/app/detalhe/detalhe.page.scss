@@ -26,7 +26,12 @@ footer {
 
 .d-flex {
     display: flex;
-}   
+}
+
+.d-flex > p {
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 .m-auto {
     margin-left: auto;
