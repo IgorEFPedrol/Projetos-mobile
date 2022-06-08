@@ -22,6 +22,7 @@ export class DetalhePage implements OnInit {
   addQtd() {
     this.quantidade++;
   }
+  
   ngOnInit() {
   }
 
