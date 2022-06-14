@@ -8,6 +8,7 @@ import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProdutoEscolhidoService } from '../service/produto-escolhido.service';
+import { Carrinho } from '../interface/carrinho';
 
 
 registerLocaleData(ptBr);
@@ -23,7 +24,8 @@ registerLocaleData(ptBr);
 export class HomePage {
   URL_BASE = 'http://lucasreno.kinghost.net/delivery';
   dados: Categoria[] = [];
-
+  carrinho: Carrinho[] = [];
+  
   constructor(
     private http: HttpClient,
     private prodService: ProdutoEscolhidoService
