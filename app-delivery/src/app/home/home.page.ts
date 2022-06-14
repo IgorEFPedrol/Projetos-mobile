@@ -3,12 +3,11 @@ import { Component } from '@angular/core';
 import { Categoria } from '../interface/categoria';
 import { Produto } from '../interface/produto';
 import { DEFAULT_CURRENCY_CODE, LOCALE_ID, NgModule } from '@angular/core';
-
-
 import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProdutoEscolhidoService } from '../service/produto-escolhido.service';
 import { Carrinho } from '../interface/carrinho';
+import { Storage } from '@ionic/storage-angular';
 
 
 registerLocaleData(ptBr);
@@ -28,9 +27,14 @@ export class HomePage {
   
   constructor(
     private http: HttpClient,
-    private prodService: ProdutoEscolhidoService
+    private prodService: ProdutoEscolhidoService,
+    private storage: Storage
   ) {
     this.pegarDados();
+  }
+
+  iniciarBanco() {
+
   }
 
   salvarProduto(produto: Produto) {
