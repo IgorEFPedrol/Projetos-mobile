@@ -8,6 +8,7 @@ import { registerLocaleData } from '@angular/common';
 import { ProdutoEscolhidoService } from '../service/produto-escolhido.service';
 import { Carrinho } from '../interface/carrinho';
 import { Storage } from '@ionic/storage-angular';
+import { element } from 'protractor';
 
 
 registerLocaleData(ptBr);
@@ -24,7 +25,8 @@ export class HomePage {
   URL_BASE = 'http://lucasreno.kinghost.net/delivery';
   dados: Categoria[] = [];
   carrinho: Carrinho[] = [];
-  
+  totalCarrinho: number = 0;
+
   constructor(
     private http: HttpClient,
     private prodService: ProdutoEscolhidoService,
@@ -40,6 +42,10 @@ export class HomePage {
   async iniciarBanco() {
     await this.storage.create();
     this.carrinho = await this.storage.get("carrinho") ?? [];
+    this.totalCarrinho = 0;
+    this.carrinho.forEach(c => {
+      this.totalCarrinho += c.quantidade * c.produto.valor
+    });
   }
 
   salvarProduto(produto: Produto) {

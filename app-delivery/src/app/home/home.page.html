@@ -17,4 +17,19 @@
            </ion-item>
         </ion-list>
     </div>
+
+    <div class="fix"></div>
+
+    <footer>
+        <div>
+            <ion-icon name="cart-outline"></ion-icon>
+            <ion-badge>{{ carrinho.length }}</ion-badge>
+        </div>
+        <div>
+            <h4>Meu pedido</h4>
+        </div>
+        <div>
+            <p>{{ totalCarrinho | currency : 'BRL' }}</p>
+        </div>
+    </footer>
 </ion-content>
