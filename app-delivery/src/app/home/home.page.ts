@@ -33,13 +33,17 @@ export class HomePage {
     this.pegarDados();
   }
 
-  iniciarBanco() {
+  ionViewWillEnter() {
+    this.iniciarBanco();
+  }
 
+  async iniciarBanco() {
+    await this.storage.create();
+    this.carrinho = await this.storage.get("carrinho") ?? [];
   }
 
   salvarProduto(produto: Produto) {
     this.prodService.produto = produto;
-
   }
 
   pegarDados() {
