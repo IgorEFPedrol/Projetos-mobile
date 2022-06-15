@@ -14,7 +14,7 @@
       <div>Preço</div>
     </div>
     <ion-list>
-      <ion-item-sliding *ngFor="let c of carrinho">
+      <ion-item-sliding *ngFor="let c of carrinho; let i = index">
         <ion-item>
           <ion-label>{{ c.quantidade }} x {{ c.produto.nome }}</ion-label>
           <div>
@@ -22,11 +22,15 @@
           </div>
         </ion-item>
         <ion-item-options side="end">
-          <ion-item-option color="danger">
+          <ion-item-option color="danger" (click)="remover(i)">
             <ion-icon name="trash-outline"></ion-icon>
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
     </ion-list>
+    <div class="itens">
+      <div>Total</div>
+      <div>{{ totalCarrinho | currency : 'BRL' }}</div>
+    </div>
   </div>
 </ion-content>

@@ -31,4 +31,9 @@ export class CarrinhoPage implements OnInit {
   ngOnInit() {
   }
 
+  remover(indice){
+    this.carrinho.splice(indice, 1);
+    this.storage.set("carrinho", this.carrinho);
+  }
+
 }
