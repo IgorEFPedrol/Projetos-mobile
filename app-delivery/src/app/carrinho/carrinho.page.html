@@ -14,11 +14,11 @@
       <div>Preço</div>
     </div>
     <ion-list>
-      <ion-item-sliding>
+      <ion-item-sliding *ngFor="let c of carrinho">
         <ion-item>
-          <ion-label>Produto XYZ</ion-label>
+          <ion-label>{{ c.quantidade }} x {{ c.produto.nome }}</ion-label>
           <div>
-            R$ 100.00
+            {{ c.produto.valor * c.quantidade | currency : 'BRL' }}
           </div>
         </ion-item>
         <ion-item-options side="end">
