@@ -34,6 +34,10 @@ export class CarrinhoPage implements OnInit {
   remover(indice){
     this.carrinho.splice(indice, 1);
     this.storage.set("carrinho", this.carrinho);
+    this.totalCarrinho = 0;
+    this.carrinho.forEach(c => {
+      this.totalCarrinho += c.quantidade * c.produto.valor;
+    });
   }
 
 }
