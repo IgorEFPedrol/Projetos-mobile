@@ -1,9 +1,32 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>carrinho</ion-title>
+    <ion-buttons>
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Carrinho</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="carrinho">
+    <div class="itens">
+      <div>Itens</div>
+      <div>Preço</div>
+    </div>
+    <ion-list>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-label>Produto XYZ</ion-label>
+          <div>
+            R$ 100.00
+          </div>
+        </ion-item>
+        <ion-item-options side="end">
+          <ion-item-option color="danger">
+            <ion-icon name="trash-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-list>
+  </div>
 </ion-content>

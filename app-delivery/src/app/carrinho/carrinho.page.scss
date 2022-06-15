@@ -1,0 +1,18 @@
+ion-header {
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.carrinho {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.itens {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}

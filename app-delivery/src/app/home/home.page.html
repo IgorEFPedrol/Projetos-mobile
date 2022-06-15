@@ -12,15 +12,15 @@
                 <ion-label>
                     <h2>{{ prod.nome }}</h2>
                     <p>{{ prod.descricao }}</p>
-                    <p>{{ prod.valor | currency : 'BRL'}}</p>                
+                    <p>{{ prod.valor | currency : 'BRL' }}</p>                
                 </ion-label>  
            </ion-item>
         </ion-list>
     </div>
 
-    <div class="fix"></div>
+    <div class="fix" *ngIf="carrinho.length > 0"></div>
 
-    <footer>
+    <footer *ngIf="carrinho.length > 0" routerLink="/carrinho">
         <div>
             <ion-icon name="cart-outline"></ion-icon>
             <ion-badge>{{ carrinho.length }}</ion-badge>
@@ -29,7 +29,7 @@
             <h4>Meu pedido</h4>
         </div>
         <div>
-            <p>{{ totalCarrinho | currency : 'BRL' }}</p>
+            <p><b>{{ totalCarrinho | currency : 'BRL' }}</b></p>
         </div>
     </footer>
 </ion-content>
