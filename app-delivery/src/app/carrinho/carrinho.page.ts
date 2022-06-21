@@ -10,6 +10,12 @@ import { Storage } from '@ionic/storage-angular';
 export class CarrinhoPage implements OnInit {
   carrinho: Carrinho[] = [];
   totalCarrinho: number = 0;
+  nome = null;
+  telefone = null;
+  entrega = null;
+  endereco = null;
+  pagamento = null;
+  mostrarEndereco = false;
 
   constructor(
     private storage: Storage
@@ -38,6 +44,13 @@ export class CarrinhoPage implements OnInit {
     this.carrinho.forEach(c => {
       this.totalCarrinho += c.quantidade * c.produto.valor;
     });
+  }
+
+  verificar() {
+    if(this.entrega == "delivery")
+      this.mostrarEndereco = true;
+    else
+     this.mostrarEndereco = false;
   }
 
 }

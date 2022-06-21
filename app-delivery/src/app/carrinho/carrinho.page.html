@@ -38,14 +38,52 @@
     <h3>Finalizar pedido</h3>
     <ion-item>
       <ion-label position="floating">Nome Completo</ion-label>
-      <ion-input type="text" name="nome" placeholder="Como vamos te chamar?"></ion-input>
+      <ion-input type="text" [(ngModel)]="nome" name="nome" placeholder="Como vamos te chamar?"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label position="floating">Telefone</ion-label>
-      <ion-input type="tel" name="telefone" placeholder="(00) 00000-0000"></ion-input>
+      <ion-input type="tel" [(ngModel)]="telefone" name="telefone" placeholder="(00) 00000-0000"></ion-input>
     </ion-item>
     <ion-list>
-      
+      <ion-radio-group [(ngModel)]="entrega" name="entrega" (ionChange)="verificar()">
+        <ion-list-header>
+          <ion-label>Escolha uma opção</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Entrega</ion-label>
+          <ion-radio slot="start" value="delivery"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Retirada no local</ion-label>
+          <ion-radio slot="start" value="balcao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
     </ion-list>
+    <ion-item *ngIf="mostrarEndereco">
+      <ion-label position="floating">Endereço</ion-label>
+      <ion-input type="text" [(ngModel)]="endereco" name="endereco" placeholder="Rua x, 999. Bairro."></ion-input>
+    </ion-item>
+    <ion-list>
+      <ion-radio-group [(ngModel)]="pagamento" name="pagamento"> 
+        <ion-list-header>
+          <ion-label>Formas de pagamento</ion-label>
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Pix</ion-label>
+          <ion-radio slot="start" value="pix"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Dinheiro</ion-label>
+          <ion-radio slot="start" value="dinheiro"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Cartão Débito/Crédito</ion-label>
+          <ion-radio slot="start" value="cartao"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <ion-button type="submit" expand="block">
+      Enviar pedido pelo Whatsapp
+    </ion-button>
   </form>
 </ion-content>
