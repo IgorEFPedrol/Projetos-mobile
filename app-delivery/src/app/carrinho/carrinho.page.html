@@ -1,9 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons>
-      <ion-back-button text=""></ion-back-button>
+      <ion-back-button text="" defaultHref="/"></ion-back-button>
+      <ion-title>Carrinho</ion-title>
     </ion-buttons>
-    <ion-title>Carrinho</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -33,4 +33,19 @@
       <div>{{ totalCarrinho | currency : 'BRL' }}</div>
     </div>
   </div>
+
+  <form>
+    <h3>Finalizar pedido</h3>
+    <ion-item>
+      <ion-label position="floating">Nome Completo</ion-label>
+      <ion-input type="text" name="nome" placeholder="Como vamos te chamar?"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="tel" name="telefone" placeholder="(00) 00000-0000"></ion-input>
+    </ion-item>
+    <ion-list>
+      
+    </ion-list>
+  </form>
 </ion-content>
