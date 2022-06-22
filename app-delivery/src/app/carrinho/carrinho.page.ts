@@ -53,4 +53,22 @@ export class CarrinhoPage implements OnInit {
      this.mostrarEndereco = false;
   }
 
+  enviarPedido() {
+    let texto = '';
+    texto += 'Nome: ' + this.nome + '\n';
+    texto += 'Telefone: ' + this.telefone + '\n';
+    texto += 'Tipo de entrega: ' + this.entrega + '\n';
+    if (this.entrega == 'delivery')
+      texto += 'Endereço: ' + this.endereco + '\n';
+    texto += 'Forma de pagamento: ' + this.pagamento + '\n';
+    texto += '\nPedido:';
+    this.carrinho.forEach(c => {
+      texto += c.quantidade + ' x '+ c.produto.nome + '\n';
+      texto += '          R$ ' + (c.quantidade * c.produto.valor).toFixed(2) + '\n';
+    });
+    texto += '\nTotal:';
+    texto += '          R$ ' + this.totalCarrinho.toFixed(2) + '\n';
+    const url = 'https://api.whatsapp.com/send?phone=5515996580305&text=' + encodeURI(texto);;
+    window.open(url, '_blank').focus();
+  }
 }
