@@ -13,12 +13,12 @@ ion-header {
     font-size: 1.5rem;
     color: #2677b1;
     font-weight: 700;
+
     span{
       color: #777;
       font-weight: 300;
     }
-  }
-  
+  } 
 }
 
 ion-segment-button {
@@ -26,4 +26,59 @@ ion-segment-button {
   --indicator-color: #2677b1;
   --color-checked: #fff;
   --background-checked: #2677b1;
+}
+
+ion-content{
+  --padding-start: 32px;
+  --padding-end: 32px;
+  --padding-top: 24px;
+}
+
+main{
+  margin-top: 56px;
+  padding: 36px;
+  background: linear-gradient(#6ad7ef, #6672d8);
+  border-radius: 24px;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.localizacao{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -44px;
+
+  img{
+    margin-right: 12px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.minmax{
+ display: flex;
+ align-items: center;
+ margin-top: 12px;
+ font-weight:  500;
+
+ ion-icon{
+   margin-right: 4px;
+   font-size: 14px;
+ }
+
+  .max{ color: #ed7e17; }
+  .min{ color: #2d5a74; margin-left: 12px; }
+}
+
+.temperatura{
+  font-size: 96px;
+  font-weight: 600;
+}
+
+.imagem-tempo{
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  right: 0;
 }
