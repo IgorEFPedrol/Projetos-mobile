@@ -125,7 +125,7 @@ h2{
   margin-bottom: 4px;
 }
 
-.proximas-horas{
+.proximos-dias{
   display: flex;
   justify-content: space-between;
   margin-top: 24px;
@@ -138,6 +138,8 @@ h2{
   padding: 6px 12px;
   font-size: 0.9rem;
   img{
+    margin-top: 4px;
+    margin-bottom: 4px;
     width: 24px;
   }
 }
