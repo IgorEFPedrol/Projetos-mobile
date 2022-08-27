@@ -24,19 +24,19 @@
   <main>
     <div class="localizacao">
       <img src="https://cdn-icons-png.flaticon.com/512/1239/1239242.png?w=826&t=st=1660351986~exp=1660352586~hmac=314c6a07980f7922f0bfe96939cad14c9a9698f55858669f8a19bac169e5f8a9">
-      <h4>Itapeva - SP</h4>
+      <h4>{{ results.city }}</h4>
     </div>
     <div class="imagem-tempo">
       <img src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png" >
     </div>
     <div class="minmax">
       <ion-icon name="arrow-up-outline" class="max"></ion-icon>
-      <div>37º</div>
+      <div>{{ results.forecast[0].max }}º</div>
       <ion-icon name="arrow-down-outline" class="min"></ion-icon>
-      <div>22º</div>
+      <div>{{ results.forecast[0].min }}º</div>
     </div>
     <div class="temperatura">
-      32º
+      {{ results.temp }}º
     </div>
   </main>
 
@@ -44,40 +44,40 @@
     <div class="info">
       <img src="https://cdn-icons-png.flaticon.com/512/959/959737.png" alt="">
       <div class="fw-350 mg-4">Vento</div>
-      <div class="fw-500">12Km/h</div>
+      <div class="fw-500">{{ results.wind_speedy }}</div>
     </div>
     <div class="info borda-separacao">
       <img src="https://cdn-icons-png.flaticon.com/512/2903/2903592.png" alt="">
       <div class="fw-350 mg-4">Umidade</div>
-      <div class="fw-500">35%</div>
+      <div class="fw-500">{{ results.humidity }}%</div>
     </div>
     <div class="info">
       <img src="https://cdn-icons-png.flaticon.com/512/8031/8031023.png" alt="">
       <div class="fw-350 mg-4">Chuva</div>
-      <div class="fw-500">20%</div>
+      <div class="fw-500"></div>
     </div>
   </div>
 
   <h2>Próximos dias</h2>
 
   <div class="proximos-dias">
-    <div class="hora">
-      <div>12:00</div>
+    <div class="dia">
+      <div>{{ results.forecast[1].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/642/642000.png" alt="">
       <div>-5ºC</div>
     </div>  
-    <div class="hora">
-      <div>13:00</div>
+    <div class="dia">
+      <div>{{ results.forecast[2].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/642/642000.png" alt="">
       <div>-2ºC</div>
     </div> 
-    <div class="hora"> 
-      <div>14:00</div>
+    <div class="dia"> 
+      <div>{{ results.forecast[3].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/2698/2698213.png" alt="">
       <div>4C</div>
     </div> 
-    <div class="hora"> 
-      <div>15:00</div>
+    <div class="dia"> 
+      <div>{{ results.forecast[4].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/2698/2698213.png" alt="">
       <div>9ºC</div>
     </div>
