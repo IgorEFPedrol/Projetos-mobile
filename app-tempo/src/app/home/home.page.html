@@ -27,7 +27,7 @@
       <h4>{{ results.city }}</h4>
     </div>
     <div class="imagem-tempo">
-      <img src="https://cdn-icons-png.flaticon.com/512/1146/1146869.png" >
+      <img src="../../assets/0.png" >
     </div>
     <div class="minmax">
       <ion-icon name="arrow-up-outline" class="max"></ion-icon>
@@ -54,7 +54,7 @@
     <div class="info">
       <img src="https://cdn-icons-png.flaticon.com/512/8031/8031023.png" alt="">
       <div class="fw-350 mg-4">Chuva</div>
-      <div class="fw-500"></div>
+      <div class="fw-500">20%</div>
     </div>
   </div>
 
@@ -64,22 +64,22 @@
     <div class="dia">
       <div>{{ results.forecast[1].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/642/642000.png" alt="">
-      <div>-5ºC</div>
-    </div>  
+      <div>{{ (results.forecast[1].max + results.forecast[1].min) / 2 }}ºC</div>
+    </div>
     <div class="dia">
       <div>{{ results.forecast[2].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/642/642000.png" alt="">
-      <div>-2ºC</div>
-    </div> 
-    <div class="dia"> 
+      <div>{{ (results.forecast[2].max + results.forecast[2].min) / 2 }}ºC</div>
+    </div>
+    <div class="dia">
       <div>{{ results.forecast[3].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/2698/2698213.png" alt="">
-      <div>4C</div>
-    </div> 
-    <div class="dia"> 
+      <div>{{ (results.forecast[3].max + results.forecast[3].min) / 2 }}ºC</div>
+    </div>
+    <div class="dia">
       <div>{{ results.forecast[4].date }}</div>
       <img src="https://cdn-icons-png.flaticon.com/512/2698/2698213.png" alt="">
-      <div>9ºC</div>
+      <div>{{ (results.forecast[4].max + results.forecast[4].min) / 2 }}ºC</div>
     </div>
   </div>
 </ion-content>

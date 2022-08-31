@@ -28,6 +28,4 @@ export class HomePage {
       response => this.results = response["results"]
     );
   }
-
-
 }
