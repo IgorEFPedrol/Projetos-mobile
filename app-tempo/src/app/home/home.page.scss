@@ -69,8 +69,16 @@ main{
    font-size: 14px;
  }
 
-  .max{ color: #ed7e17; }
+  
   .min{ color: #2d5a74; margin-left: 12px; }
+}
+
+.max{
+  color: #ed7e17;
+}
+
+.min{
+  color: #2d5a74;
 }
 
 .temperatura{
@@ -142,4 +150,9 @@ h2{
     margin-bottom: 4px;
     width: 24px;
   }
+}
+
+.just{
+  display: flex;
+  align-items: center;
 }

@@ -52,34 +52,26 @@
       <div class="fw-500">{{ results.humidity }}%</div>
     </div>
     <div class="info">
-      <img src="https://cdn-icons-png.flaticon.com/512/8031/8031023.png" alt="">
-      <div class="fw-350 mg-4">Chuva</div>
-      <div class="fw-500">20%</div>
+      <img src="https://cdn-icons-png.flaticon.com/512/1247/1247786.png" alt="">
+      <div class="fw-350 mg-4">{{ results.sunrise }}</div>
+      <div class="fw-350">{{ results.sunset }}</div>
     </div>
   </div>
 
   <h2>Próximos dias</h2>
 
   <div class="proximos-dias">
-    <div class="dia">
-      <div>{{ results.forecast[1].date }}</div>
-      <img src="https://cdn-icons-png.flaticon.com/512/642/642000.png" alt="">
-      <div>{{ (results.forecast[1].max + results.forecast[1].min) / 2 }}ºC</div>
-    </div>
-    <div class="dia">
-      <div>{{ results.forecast[2].date }}</div>
-      <img src="https://cdn-icons-png.flaticon.com/512/642/642000.png" alt="">
-      <div>{{ (results.forecast[2].max + results.forecast[2].min) / 2 }}ºC</div>
-    </div>
-    <div class="dia">
-      <div>{{ results.forecast[3].date }}</div>
-      <img src="https://cdn-icons-png.flaticon.com/512/2698/2698213.png" alt="">
-      <div>{{ (results.forecast[3].max + results.forecast[3].min) / 2 }}ºC</div>
-    </div>
-    <div class="dia">
-      <div>{{ results.forecast[4].date }}</div>
-      <img src="https://cdn-icons-png.flaticon.com/512/2698/2698213.png" alt="">
-      <div>{{ (results.forecast[4].max + results.forecast[4].min) / 2 }}ºC</div>
+    <div class="dia" *ngFor="let i of [1, 2, 3, 4]">
+      <div>{{ results.forecast[i].date }}</div>
+      <img src="../../assets/{{results.forecast[i].condition}}.png">
+      <div class="just">
+        <ion-icon name="arrow-up-outline" class="max"></ion-icon>
+         {{ results.forecast[i].max}}ºC
+      </div>
+      <div class="just">
+        <ion-icon name="arrow-down-outline" class="min"></ion-icon>
+        {{ results.forecast[i].min}}ºC
+      </div>
     </div>
   </div>
 </ion-content>
