@@ -1,20 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <div class="coracao"> 
+    <div class="heart"></div>
+    <div class="heart"></div>
+    <div class="heart"></div>
   </div>
+  <div class="center">
+    <h1>Vai dar namoro</h1>
+    <h3>Vamos ver se ele(a) goxxxta?</h3>
+  </div>
+  <ion-item class="ion-no-padding">
+    <ion-label position="floating">Primeiro Nome</ion-label>
+    <ion-input [(ngModel)]="nome1" type="text"></ion-input>
+  </ion-item>
+  <div class="icone"><ion-icon name="add"></ion-icon></div>
+  <ion-item class="ion-no-padding">
+    <ion-label position="floating">Segundo Nome</ion-label>
+    <ion-input [(ngModel)]="nome2" type="text"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="calcular()" id="open-resposta" expand="full" color="danger">Calcular</ion-button>
+
+  <ion-modal id="resposta" #modal trigger="open-resposta">
+    <ng-template>
+      <h1>{{ porcentagem }}%</h1>
+    </ng-template>
+
+  </ion-modal>
 </ion-content>

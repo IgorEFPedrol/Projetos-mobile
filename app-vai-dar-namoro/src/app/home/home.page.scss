@@ -1,27 +1,84 @@
-#container {
-  text-align: center;
+ion-content{
+  --padding-start: 32px;
+  --padding-top: 32px;
+  --padding-end: 32px;
+}
+.coracao{
+  display: flex;
+  justify-content: center;
+}
 
+
+.heart {
+  width: 6.25em;
+  height: 5em;
+  position: relative;
+ }
+ .heart:before,
+ .heart:after {
+  content: "";
+  width: 3em;
+  height: 5em;
   position: absolute;
+  left: 3em;
+  top: 0;
+  background: red;
+  animation-name: coracao;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  border-radius: 3em 3em 0 0;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+ }
+ .heart:after {
   left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+ }
+ 
+@keyframes coracao {
+  0%   {background-color: red;}
+  25%  {background-color: pink;}
+  50%  {background-color: purple;}
+  100% {background-color: red;}
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+h1{
+  font-weight: 700;
+  font-size: 28px;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+h3{
+  font-weight: 500;
+  font-size: 18px;
+}
+.center{
+  text-align: center;
 }
 
-#container a {
-  text-decoration: none;
+.icone{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  ion-icon{
+    font-size: 40px;
+  }
+}
+
+ion-button{
+  position: absolute;
+  bottom: 32px;
+  width: calc(100% - 64px);
+}
+
+#resposta{
+  --width: fit-content;
+  --min-width: 60%;
+  --height: fit-content;
+  --border-radius: 12px;
+  text-align: center;
+  h1{
+    margin-bottom: 18px;
+  }
 }
