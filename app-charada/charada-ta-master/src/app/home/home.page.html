@@ -1,12 +1,14 @@
 <ion-content>
-  <div class="pergunta">
+  <div class="pergunta center">
     {{pergunta}}
   </div>
-  <div class="resposta">
+  <div class="resposta center">
     {{resposta}}
   </div>
 
-  <ion-button>Revelar resposta</ion-button>
+  <div class="botao-resposta center">
+    <ion-button (click)="solicitarResposta()">Revelar resposta</ion-button>
+  </div>
 
   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="solicitarCharada()">
