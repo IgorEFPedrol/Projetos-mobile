@@ -1,0 +1,10 @@
+.title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.input{
+  display: grid;
+  grid-template-rows: 2;
+}

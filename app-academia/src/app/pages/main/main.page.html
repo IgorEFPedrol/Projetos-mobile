@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Meu Treino</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Criar atividade</ion-label>
+    <ion-input placeholder="Novo Exercício" [clearInput]="true" [(ngModel)]="novoExercicio"></ion-input>
+  </ion-item>
+
+  <ion-button type="submit" expand="block"(click)="cadastrarExercicio()" [disabled]="!novoExercicio">Adicionar Exercício</ion-button>
+  <ion-list>
+    <ion-item-group *ngFor="let exercicio of exercicios; let id = index">
+      <ion-item-sliding (ionSwipe)="removerExercicio(id)">
+        <ion-item>{{ id }}  - {{ exercicio }}</ion-item>
+        <ion-item-options side="end">
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+</ion-content>
