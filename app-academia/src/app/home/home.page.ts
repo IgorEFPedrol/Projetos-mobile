@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage-angular';
 
+interface atividade{
+  nome: string;
+  peso: number;
+}
+
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.page.html',
-  styleUrls: ['./main.page.scss'],
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
-export class MainPage implements OnInit {
-  exercicios: string[] = [];
-  exercicioBackup: string[] = [];
+export class HomePage {
+  exercicios: atividade[] = [];
+  exerciciosBackup: atividade[] = [];
   novoExercicio: string = '';
 
   constructor(private storage: Storage, private toast: ToastController) {
@@ -38,21 +43,25 @@ export class MainPage implements OnInit {
     this.exercicios = await this.storage.get('exercicios') ?? [];
   }
 
-  async cadastrarTarefa()
+  async cadastrarAtividade()
   {
-    if (this.novaTarefa != '')
+    if (this.novoExercicio != '')
     {
-    this.exercicios.push(this.novaTarefa);
+    this.exercicios.push({nome: this.novoExercicio, peso: 0});
     this.novoExercicio = '';
     await this.storage.set('exercicios', this.exercicios)
     }  
   }
 
-  async removerTarefa(posicao) 
+  async removerAtividade(posicao) 
   {
     this.desfazer(this.exercicios[posicao]);
     this.exerciciosBackup = [...this.exercicios];
     this.exercicios.splice(posicao, 1);
+    await this.storage.set('exercicios', this.exercicios);
+  }
+
+  async atualizarBanco(){
     await this.storage.set('exercicios', this.exercicios);
   }
 }
