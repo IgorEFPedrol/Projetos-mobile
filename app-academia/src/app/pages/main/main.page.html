@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title class="headerTitle">Cadastro de atividades</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="title">Adicione suas atividades fisícas</h2>
+  <p class="subtitle">Adicione suas atividades abaixo com a quantidade necessária para executar cada uma delas!</p>
+
+  <div class="container">
+
+    <form action="">
+      <label class="labelForm" for="inputForm">Adicione uma atividade</label>
+      <input type="text" class="inputForm" placeholder="Adicione uma atividade aqui..." [(ngModel)]="novoExercicio"
+        name="novoExercicio">
+    </form>
+
+    <ion-button class="botao" expand="block" [disabled]="!novoExercicio" (click)="cadastrarAtividade()">Cadastrar
+      atividade</ion-button>
+
+    <ion-list>
+      <ion-item-group *ngFor="let exercicio of exercicios; let id = index">
+        <ion-item-sliding (ionSwipe)="removerAtividade(id)">
+          <ion-item>
+          <p class="textAtividade">
+            {{ exercicio.nome }}
+          </p>
+            <input class="number" type="number" (change)="atualizarBanco()" placeholder="peso" [(ngModel)]="exercicio.peso">
+          </ion-item>
+
+          <ion-item-options side="end">
+
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-item-group>
+    </ion-list>
+  </div>
+</ion-content>
